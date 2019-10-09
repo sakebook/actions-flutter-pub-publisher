@@ -1,0 +1,6 @@
+# action.yml
+name: 'Publish Dart package'
+description: 'Publish Dart package'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
