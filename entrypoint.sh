@@ -13,7 +13,7 @@ check_credentials() {
 
 copy_credential() {
   echo "Copy credentials"
-  mkdir -p .pub-cache
+  mkdir -p ~/.pub-cache
   cat <<EOF > ~/.pub-cache/credentials.json
 $INPUT_CREDENTIAL
 EOF
