@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  test_job:
     runs-on: ubuntu-latest
     name: Test
     steps:
@@ -9,3 +9,6 @@ jobs:
         uses: actions/checkout@v1
       - name: Test action
         uses: ./
+        with:
+          credential: "{}"
+          skip_test: true

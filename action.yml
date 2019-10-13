@@ -1,6 +1,14 @@
 # action.yml
 name: 'Publish Dart package'
 description: 'Publish Dart package'
+inputs:
+  credential:
+    description: 'Google Account credential'
+    required: true
+  skip_test:
+    description: '(Optional) Skip test (default: false)'
+    required: false
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
