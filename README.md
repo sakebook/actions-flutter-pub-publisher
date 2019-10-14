@@ -27,9 +27,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Publish
-        uses: actions/actions-flutter-pub-publisher@v1
+        uses: sakebook/actions-flutter-pub-publisher@v1.0.2
         with:
           credential: ${{ secrets.CREDENTIAL_JSON }}
           skip_test: true
