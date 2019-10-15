@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Publish
-        uses: sakebook/actions-flutter-pub-publisher@v1.0.2
+        uses: sakebook/actions-flutter-pub-publisher@v1.0.
         with:
           credential: ${{ secrets.CREDENTIAL_JSON }}
           skip_test: true
