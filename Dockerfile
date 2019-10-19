@@ -1,4 +1,4 @@
-ARG channel="stable"
+ARG channel
 FROM cirrusci/flutter:$channel
 
 USER root
