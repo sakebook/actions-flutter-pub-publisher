@@ -3,6 +3,7 @@ on:
     branches:
       - 'test/*'
       - '!master'
+      - 'feature/*'
 jobs:
   test_job:
     runs-on: ubuntu-latest
