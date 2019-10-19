@@ -17,7 +17,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.channel }}
+    - channel=${{ inputs.channel }}
 branding:
   icon: 'arrow-up-circle'
   color: 'blue'
