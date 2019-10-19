@@ -3,6 +3,8 @@ on:
     branches:
       - 'test/*'
       - '!master'
+    tags:
+      - 'QA'
 jobs:
   test_job:
     runs-on: ubuntu-latest
