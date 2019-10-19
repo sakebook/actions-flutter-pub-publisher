@@ -17,7 +17,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - --build-arg channel=${{ inputs.channel }}
+    - "--build-arg channel=${{ inputs.channel }}"
 branding:
   icon: 'arrow-up-circle'
   color: 'blue'
