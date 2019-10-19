@@ -3,8 +3,6 @@ on:
     branches:
       - 'test/*'
       - '!master'
-    tags:
-      - 'QA'
 jobs:
   test_job:
     runs-on: ubuntu-latest
@@ -16,4 +14,5 @@ jobs:
         uses: ./
         with:
           credential: "{}"
-          skip_test: true
+          channel: 'beta'
+          skip_test: false
