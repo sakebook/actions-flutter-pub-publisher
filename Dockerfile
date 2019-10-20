@@ -1,3 +1,4 @@
+ARG channel
 FROM cirrusci/flutter:$channel
 
 USER root
