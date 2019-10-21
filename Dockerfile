@@ -1,4 +1,4 @@
-ARG channel
+ARG channel=$INPUT_CHANNEL
 FROM cirrusci/flutter:$channel
 
 USER root
