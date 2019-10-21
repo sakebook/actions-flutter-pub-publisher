@@ -16,4 +16,4 @@ jobs:
         with:
           credential: "{}"
           flutter_package: false
-          skip_test: false
+          skip_test: true

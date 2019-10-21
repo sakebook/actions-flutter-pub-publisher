@@ -15,4 +15,4 @@ jobs:
         uses: ./
         with:
           credential: "{}"
-          skip_test: false
+          skip_test: true
