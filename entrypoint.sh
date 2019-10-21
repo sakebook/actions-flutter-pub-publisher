@@ -30,10 +30,24 @@ run_test_if_needed() {
   fi
 }
 
-publish_package() {
-  echo "Publish to Pub"
+publish_package_dart() {
+  echo "Publish dart package to Pub"
+  pub publish --dry-run
+  pub publish -f
+}
+
+publish_package_flutter() {
+  echo "Publish flutter package to Pub"
   flutter pub pub publish --dry-run
   flutter pub pub publish -f
+}
+
+publish_package() {
+  if "${INPUT_FLUTTER_PACKAGE}"; then
+    publish_package_flutter
+  else
+    publish_package_dart
+  fi
 }
 
 check_credentials

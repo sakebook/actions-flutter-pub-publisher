@@ -1,10 +1,14 @@
 # action.yml
-name: 'Publish Dart package'
-description: 'Publish Dart package'
+name: 'Publish Dart/Flutter package'
+description: 'Publish Dart/Flutter package'
 inputs:
   credential:
     description: 'Google Account credential'
     required: true
+  flutter_package:
+    description: '(Optional) Publish packages type. (default: true)'
+    required: false
+    default: true
   skip_test:
     description: '(Optional) Skip test (default: false)'
     required: false
