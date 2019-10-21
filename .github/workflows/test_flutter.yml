@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - 'test/*'
+      - '!master'
+      - 'feature/*'
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Test action
+        uses: ./
+        with:
+          credential: "{}"
+          skip_test: false

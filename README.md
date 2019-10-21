@@ -8,9 +8,9 @@ This action publishing the Flutter plugin.
 
 **Required** Google Account credential.
 
-### `channel`
+### `flutter_package`
 
-**Optional** Flutter channel. Default: `stable`
+**Optional** Publish packages type. Default: `true`
 
 ### `skip_test`
 
@@ -37,6 +37,6 @@ jobs:
         uses: sakebook/actions-flutter-pub-publisher@v1.1.0
         with:
           credential: ${{ secrets.CREDENTIAL_JSON }}
-          channel: 'stable'
+          flutter_package: false
           skip_test: true
 ```

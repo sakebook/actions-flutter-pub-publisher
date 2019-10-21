@@ -15,5 +15,5 @@ jobs:
         uses: ./
         with:
           credential: "{}"
-          channel: 'beta'
+          flutter_package: false
           skip_test: false

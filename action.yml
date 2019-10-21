@@ -1,14 +1,14 @@
 # action.yml
 name: 'Publish Dart/Flutter package'
-description: 'Publish Flutter package'
+description: 'Publish Dart/Flutter package'
 inputs:
   credential:
     description: 'Google Account credential'
     required: true
-  channel:
-    description: '(Optional) flutter channel (default: stable)'
+  flutter_package:
+    description: '(Optional) Publish packages type. (default: true)'
     required: false
-    default: 'stable'
+    default: true
   skip_test:
     description: '(Optional) Skip test (default: false)'
     required: false
@@ -16,8 +16,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    CHANNEL: '${{ inputs.channel }}'
 branding:
   icon: 'arrow-up-circle'
   color: 'blue'

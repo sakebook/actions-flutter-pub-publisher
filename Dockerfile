@@ -1,4 +1,3 @@
-ARG channel=$INPUT_CHANNEL
 FROM cirrusci/flutter:stable
 
 USER root
@@ -6,8 +5,6 @@ USER root
 WORKDIR /home/cirrus
 
 COPY entrypoint.sh /home/cirrus/entrypoint.sh
-
-RUN env
 
 RUN chmod +x entrypoint.sh
 
