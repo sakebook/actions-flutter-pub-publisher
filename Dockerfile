@@ -1,5 +1,5 @@
 ARG channel=$INPUT_CHANNEL
-FROM cirrusci/flutter:$channel
+FROM cirrusci/flutter:stable
 
 USER root
 
