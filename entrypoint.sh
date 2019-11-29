@@ -11,6 +11,11 @@ check_credentials() {
   echo "OK"
 }
 
+switch_working_directory() {
+  echo "Switching to package directory"
+  cd "$INPUT_PACKAGE_DIRECTORY"
+}
+
 copy_credential() {
   echo "Copy credentials"
   mkdir -p ~/.pub-cache
@@ -52,5 +57,6 @@ publish_package() {
 
 check_credentials
 copy_credential
+switch_working_directory
 run_test_if_needed
 publish_package

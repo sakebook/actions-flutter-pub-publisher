@@ -13,6 +13,10 @@ inputs:
     description: '(Optional) Skip test (default: false)'
     required: false
     default: false
+  package_directory:
+    description: '(Optional) Package directory (default: ".")'
+    required: false
+    default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
