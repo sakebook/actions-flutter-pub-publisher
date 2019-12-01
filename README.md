@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Publish
-        uses: sakebook/actions-flutter-pub-publisher@v1.1.0
+        uses: sakebook/actions-flutter-pub-publisher@v1.2.0
         with:
           credential: ${{ secrets.CREDENTIAL_JSON }}
           flutter_package: false
