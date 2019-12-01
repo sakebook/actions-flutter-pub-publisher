@@ -16,6 +16,10 @@ This action publishing the Flutter plugin.
 
 **Optional** Skip test. Default: `false`
 
+### `package_directory`
+
+**Optional** Package directory. Default: `"."`
+
 ## Example usage
 
 ```yaml
