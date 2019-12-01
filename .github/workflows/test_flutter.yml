@@ -14,4 +14,5 @@ jobs:
         uses: ./
         with:
           credential: "{}"
+          package_directory: "."
           skip_test: true
