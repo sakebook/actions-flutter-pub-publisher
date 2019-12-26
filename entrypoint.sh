@@ -30,8 +30,13 @@ run_test_if_needed() {
     echo 'Skip test'
   else
     echo "Run test"
-    flutter pub get
-    flutter test
+    if "${INPUT_FLUTTER_PACKAGE}"; then
+      flutter pub get
+      flutter test
+    else
+      pub get
+      pub test
+    fi
   fi
 }
 
