@@ -8,6 +8,9 @@ This action publishing the Flutter plugin.
 
 **Required** Google Account credential.
 
+You can find the credentials.json within `.pub-cache` in the User's home directory.
+You can use `open ~/.pub-cache`.
+
 ### `flutter_package`
 
 **Optional** Publish packages type. Default: `true`
