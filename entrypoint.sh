@@ -25,13 +25,27 @@ EOF
   echo "OK"
 }
 
+test_dart() {
+  echo "Run test for dart"
+  pub get
+  pub test
+}
+
+test_flutter() {
+  echo "Run test for flutter"
+  flutter pub get
+  flutter test
+}
+
 run_test_if_needed() {
   if "${INPUT_SKIP_TEST}"; then
     echo 'Skip test'
   else
-    echo "Run test"
-    flutter pub get
-    flutter test
+    if "${INPUT_FLUTTER_PACKAGE}"; then
+      test_flutter()
+    else
+      test_dart()
+    fi
   fi
 }
 
