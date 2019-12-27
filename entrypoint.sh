@@ -42,9 +42,9 @@ run_test_if_needed() {
     echo 'Skip test'
   else
     if "${INPUT_FLUTTER_PACKAGE}"; then
-      test_flutter()
+      test_flutter
     else
-      test_dart()
+      test_dart
     fi
   fi
 }
