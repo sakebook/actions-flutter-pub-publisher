@@ -25,70 +25,45 @@ EOF
   echo "OK"
 }
 
-test_dart() {
-  echo "Run test for dart"
-  pub get
-  pub test
+create_prefix() {
+  FLUTTER_PREFIX=""
+  PUB_PREFIX="pub"
+  if "${INPUT_FLUTTER_PACKAGE}"; then
+    FLUTTER_PREFIX="flutter"
+    PUB_PREFIX=""
+  fi
 }
 
-test_flutter() {
-  echo "Run test for flutter"
-  flutter pub get
-  flutter test
+test() {
+  echo "Run test"
+  $FLUTTER_PREFIX pub get
+  $FLUTTER_PREFIX $PUB_PREFIX test
 }
 
 run_test_if_needed() {
   if "${INPUT_SKIP_TEST}"; then
     echo 'Skip test'
   else
-    if "${INPUT_FLUTTER_PACKAGE}"; then
-      test_flutter
-    else
-      test_dart
-    fi
+    test
   fi
 }
 
-dry_run_package_dart() {
-  echo "Executing dart package validation"
-  pub publish --dry-run
-}
-
-publish_package_dart() {
-  dry_run_package_dart
-  echo "Publish dart package to Pub"
-  pub publish -f
-}
-
-dry_run_package_flutter() {
-  echo "Executing flutter package validation"
-  flutter pub pub publish --dry-run
-}
-
-publish_package_flutter() {
-  dry_run_package_flutter
-  echo "Publish flutter package to Pub"
-  flutter pub pub publish -f
+dry_run() {
+  echo "Executing package validation"
+  $FLUTTER_PREFIX pub publish --dry-run
 }
 
 publish_package() {
-  if "${INPUT_FLUTTER_PACKAGE}"; then
-    if "${INPUT_DRY_RUN}"; then
-      dry_run_package_flutter
-    else
-      publish_package_flutter
-    fi
-  else
-    if "${INPUT_DRY_RUN}"; then
-      dry_run_package_dart
-    else
-      publish_package_dart
-    fi
+  dry_run
+  if [ "${INPUT_DRY_RUN}" = false ]; then
+    echo "Publish package to Pub"
+    $FLUTTER_PREFIX pub publish -f
   fi
 }
 
 check_credentials
 copy_credential
 switch_working_directory
+create_prefix
 run_test_if_needed
 publish_package

@@ -23,6 +23,10 @@ You can use `open ~/.pub-cache`.
 
 **Optional** Package directory. Default: `"."`
 
+### `dry_run`
+
+**Optional** Dry run, no publish. Default: `false`
+
 ## Example usage
 
 ```yaml
@@ -46,4 +50,5 @@ jobs:
           credential: ${{ secrets.CREDENTIAL_JSON }}
           flutter_package: false
           skip_test: true
+          dry_run: true
 ```
