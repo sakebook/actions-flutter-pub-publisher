@@ -49,23 +49,41 @@ run_test_if_needed() {
   fi
 }
 
-publish_package_dart() {
-  echo "Publish dart package to Pub"
+dry_run_package_dart() {
+  echo "Executing dart package validation"
   pub publish --dry-run
+}
+
+publish_package_dart() {
+  dry_run_package_dart
+  echo "Publish dart package to Pub"
   pub publish -f
 }
 
-publish_package_flutter() {
-  echo "Publish flutter package to Pub"
+dry_run_package_flutter() {
+  echo "Executing flutter package validation"
   flutter pub pub publish --dry-run
+}
+
+publish_package_flutter() {
+  dry_run_package_flutter
+  echo "Publish flutter package to Pub"
   flutter pub pub publish -f
 }
 
 publish_package() {
   if "${INPUT_FLUTTER_PACKAGE}"; then
-    publish_package_flutter
+    if "${INPUT_DRY_RUN}"; then
+      dry_run_package_flutter
+    else
+      publish_package_flutter
+    fi
   else
-    publish_package_dart
+    if "${INPUT_DRY_RUN}"; then
+      dry_run_package_dart
+    else
+      publish_package_dart
+    fi
   fi
 }
 

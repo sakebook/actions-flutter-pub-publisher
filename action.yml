@@ -17,6 +17,10 @@ inputs:
     description: '(Optional) Package directory (default: ".")'
     required: false
     default: '.'
+  dry_run:
+    description: '(Optional) Dry run, no publish (default: false)'
+    required: false
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
