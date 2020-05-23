@@ -1,3 +1,7 @@
+## 1.3.0
+- Supported dry run option
+- Refactor script
+
 ## 1.2.1
 - Fix for Dart test
 - Update readme credential section
