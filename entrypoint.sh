@@ -37,7 +37,7 @@ create_prefix() {
 test() {
   echo "Run test"
   $FLUTTER_PREFIX pub get
-  $FLUTTER_PREFIX $PUB_PREFIX test
+  $FLUTTER_PREFIX $PUB_PREFIX run test
 }
 
 run_test_if_needed() {
