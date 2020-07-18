@@ -1,0 +1,28 @@
+name: flutter_test_example
+description: For GitHub Actions test.
+version: 0.0.1
+homepage: https://sakebook.dev/
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  test:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+      macos:
+        pluginClass: HelloPlugin
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  flutter: ">=1.12.0 <2.0.0"
