@@ -1,0 +1,10 @@
+name: dart_test_example
+version: 0.0.1
+description: For GitHub Actions test.
+homepage: https://sakebook.dev/
+
+dev_dependencies:
+  test:
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
