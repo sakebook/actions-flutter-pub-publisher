@@ -6,7 +6,7 @@ on:
 jobs:
   test_job:
     runs-on: ubuntu-latest
-    name: Test
+    name: Flutter Test
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -14,5 +14,6 @@ jobs:
         uses: ./
         with:
           credential: "{}"
-          package_directory: "."
-          skip_test: true
+          package_directory: "flutter_test_example"
+          skip_test: false
+          dry_run: true

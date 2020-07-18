@@ -6,7 +6,7 @@ on:
 jobs:
   test_job:
     runs-on: ubuntu-latest
-    name: Test
+    name: Dart Test
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -14,5 +14,7 @@ jobs:
         uses: ./
         with:
           credential: "{}"
+          package_directory: "dart_test_example"
           flutter_package: false
-          skip_test: true
+          skip_test: false
+          dry_run: true
