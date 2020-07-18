@@ -1,3 +1,7 @@
+## 1.3.1
+- Fix for Dart test
+- Enabled local projects for CI
+
 ## 1.3.0
 - Supported dry run option
 - Refactor script
