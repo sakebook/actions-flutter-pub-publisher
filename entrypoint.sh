@@ -7,6 +7,11 @@ check_credentials() {
   if [ -z "$INPUT_CREDENTIAL" ]; then
     echo "Missing credential"
     exit 1
+  EXPIRATION=`echo $INPUT_CREDENTIAL | jq '.expiration'`
+  NOWTIME=`date +%s`
+  if [$(($INPUT_CREDENTIAL / 1000 < $NOWTIME))]; then
+    echo "Your token is expired. Renew your credentials to continue."
+    exit 1
   fi
   echo "OK"
 }
