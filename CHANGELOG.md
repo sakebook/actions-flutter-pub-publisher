@@ -1,3 +1,6 @@
+## 1.4.0
+- Supported new credentials
+
 ## 1.3.1
 - Fix for Dart test
 - Enabled local projects for CI
