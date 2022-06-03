@@ -8,7 +8,7 @@ This action publishing the Flutter plugin.
 
 **Required** Google Account credential.
 
-You can find the `pub-credentials.json` within `Library/Application Support/dart` in the User's home directory.  
+You can find the `pub-credentials.json` within `Library/Application Support/dart` in the Windows User's home directory or `~/.config/dart/pub-credentials.json` on Ubuntu (Linux).
 If you can't find it, you can generate it by running `pub login`.
 
 ### `flutter_package`
