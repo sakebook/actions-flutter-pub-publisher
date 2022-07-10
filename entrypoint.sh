@@ -29,8 +29,8 @@ switch_working_directory() {
 
 test_dart() {
   echo "Run test for dart"
-  pub get
-  pub run test
+  dart pub get
+  dart run test
 }
 
 test_flutter() {
