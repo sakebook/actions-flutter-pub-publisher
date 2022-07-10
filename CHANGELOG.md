@@ -1,3 +1,7 @@
+## 1.4.1
+- Fix for pub command
+- Update readme credential section
+
 ## 1.4.0
 - Supported new credentials
 
