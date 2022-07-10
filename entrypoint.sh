@@ -52,24 +52,22 @@ run_test_if_needed() {
 }
 
 create_prefix() {
-  FLUTTER_PREFIX=""
-  PUB_PREFIX="pub"
+  EXECUTABLE_PREFIX="dart"
   if "${INPUT_FLUTTER_PACKAGE}"; then
-    FLUTTER_PREFIX="flutter"
-    PUB_PREFIX=""
+    EXECUTABLE_PREFIX="flutter"
   fi
 }
 
 dry_run() {
   echo "Executing package validation"
-  $FLUTTER_PREFIX pub publish --dry-run
+  $EXECUTABLE_PREFIX pub publish --dry-run
 }
 
 publish_package() {
   dry_run
   if [ "${INPUT_DRY_RUN}" = false ]; then
     echo "Publish package to Pub"
-    $FLUTTER_PREFIX pub publish -f
+    $EXECUTABLE_PREFIX pub publish -f
   fi
 }
 
