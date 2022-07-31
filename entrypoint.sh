@@ -18,7 +18,7 @@ copy_credential() {
 $INPUT_CREDENTIAL
 EOF
   mkdir -p ~/.pub-cache
-  ln -s ~/Library/Application\ Support/dart/pub-credentials.json credentials.json
+  ln -s ~/Library/Application\ Support/dart/pub-credentials.json ~/.pub-cache/credentials.json
   echo "OK"
 }
 
