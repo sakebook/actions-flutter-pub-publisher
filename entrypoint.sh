@@ -13,8 +13,8 @@ check_credentials() {
 
 copy_credential() {
   echo "Copy credentials"
-  mkdir -p ~/.pub-cache
-  cat <<EOF > ~/.pub-cache/credentials.json
+  mkdir -p $HOME/.config/dart
+  cat <<EOF > ~/.config/dart/credentials.json
 $INPUT_CREDENTIAL
 EOF
   echo "OK"
